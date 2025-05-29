@@ -290,6 +290,27 @@ npm run electron:install
 npm run electron:dev
 ```
 
+## Git Workflow
+Follow the git workflow outlined in `git-workflow.md` for:
+- Branch naming conventions
+- Commit message standards
+- Pull request processes
+- Code review requirements
+
+## GitHub Integration
+Reference `github-integration.md` for:
+- Repository setup and configuration
+- CI/CD pipeline configuration
+- Issue and pull request templates
+- GitHub Actions workflows
+
+## Security Notes
+Follow all security guidelines in `security-notes.md` including:
+- End-to-end encryption implementation
+- Zero-knowledge architecture patterns
+- Platform-specific security requirements
+- Privacy-first development practices
+
 ## Continuous Integration
 
 ### CI/CD Pipeline
