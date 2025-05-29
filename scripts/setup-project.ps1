@@ -43,6 +43,7 @@ function Download-Template {
             New-Item -ItemType Directory -Path $dir -Force
         }
         
+        # FIXED: Use proper PowerShell web request
         Invoke-WebRequest -Uri $url -OutFile $LocalPath -UseBasicParsing
         Write-Host "✅ Downloaded: $FileName" -ForegroundColor Green
     }
@@ -160,9 +161,11 @@ if (!(Test-Path ".cline\decisions.md")) {
 
 # Download and save template version
 try {
-    $version = Invoke-WebRequest -Uri "$TemplateRepo/VERSION" -UseBasicParsing
-    Set-Content -Path ".cline\TEMPLATE_VERSION" -Value $version.Content.Trim()
-    Write-Host "✅ Template version: $($version.Content.Trim())" -ForegroundColor Green
+    # FIXED: Use proper PowerShell web request instead of curl
+    $versionResponse = Invoke-WebRequest -Uri "$TemplateRepo/VERSION" -UseBasicParsing
+    $version = $versionResponse.Content.Trim()
+    Set-Content -Path ".cline\TEMPLATE_VERSION" -Value $version
+    Write-Host "✅ Template version: $version" -ForegroundColor Green
 }
 catch {
     Write-Warning "❌ Could not retrieve template version"
