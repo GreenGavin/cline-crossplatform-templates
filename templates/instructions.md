@@ -1,5 +1,9 @@
 # [Project Name] - Cross-Platform Development Instructions
 
+## Project Overview
+Brief: [One-sentence project description]
+For detailed context, see `.cline/context.md`
+
 ## Architecture Principles
 
 ### Core Design Philosophy
